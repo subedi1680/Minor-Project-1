@@ -1,0 +1,46 @@
+
+.login {
+    width: 35dvw;
+    height: 50dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius:1ch;
+    background-color:rgb(140, 157, 225);
+    margin-left: 55dvw;
+    margin-top: 25dvh;
+}
+.email {
+}
+.password {
+    margin-top: 2dvh;
+}
+.login_button {
+    margin-top: 2dvh;
+}
+.forgot_pass {
+    margin-top: 1dvh;
+}
+.register_button {
+    margin-top: 10vh;
+}
+#email, #password{
+    border-radius: 0.5ch;
+    border-color: gray;
+    height: 3dvw;
+    width: 27dvw;
+}
+#login_button, #register_button{
+    border-radius: 0.5ch;
+    height: 3dvh;
+    width: 15dvw;
+}
+a{
+    color: blue;
+    text-decoration-line: underline;
+}
+a:hover{
+    color: gray;
+    cursor: pointer;
+}
