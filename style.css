@@ -1,4 +1,6 @@
-
+body{
+    background-image: linear-gradient(to bottom,#131b45,#60abcb);
+}
 .login {
     width: 35dvw;
     height: 50dvh;
