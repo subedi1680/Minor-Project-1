@@ -7,8 +7,8 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 15dvw;
-    margin-top: 25dvh;
+    margin-left: 5dvw;
+    margin-top: 20dvh;
     background: #599dc3;
 }
 
@@ -33,7 +33,7 @@ body{
     text-align: center;
     margin: 1em;
     color: rgb(255, 255, 255);
-    font-size: 2em;
+    font-size: 2.5em;
   }
   
   .field {
@@ -55,7 +55,7 @@ body{
     border: none;
     outline: none;
     width: 100%;
-    color: #97d3e4;
+    color: #000000;
   }
   
   .form .btn {
@@ -126,4 +126,6 @@ body{
   }
   .text{
     margin-left: 15dvw;
+    font-style: italic;
+    font-size: larger;
   }
