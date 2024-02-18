@@ -8,7 +8,7 @@ body{
     justify-content: center;
     align-items: center;
     margin-left: 5dvw;
-    margin-top: 7dvh;
+    margin-top: 1dvh;
     border-radius: 25px;
     background: #599dc3;
     box-shadow:  8px 8px 16px #457a98,
@@ -31,9 +31,8 @@ body{
   
   #heading {
     text-align: center;
-    margin: 1em;
     color: rgb(255, 255, 255);
-    font-size: 2.5em;
+    font-size: 2em;
   }
   
   .field {
@@ -64,7 +63,7 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin-top: 2.5em;
+    margin-top: em;
   }
   
   .button1 {
@@ -95,8 +94,38 @@ body{
     height:50dvh;
   }
   .text{
-    margin-left: 15dvw;
+    margin-left: 5dvw;
     font-style: italic;
     font-size: larger;
+    text-align: center;
   }
-  
+  #text{
+    font-size: 25px;
+  }
+  ::placeholder{
+    color: #4d4b4b;
+  }
+  [type="date"],select{
+    height: 5dvh;
+    background-color: #97d3e4;
+    border-radius: 25px;
+    text-align: center;
+    border: none;
+    color: #4d4b4b;
+    font-size: large;
+  }
+  [type="date"]{
+    width : 10dvw;
+    margin-left: 2dvw;
+  }
+  select{
+    width : 10dvw;
+    margin-left: 6dvw;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  .log{
+    margin-top: 1dvh;
+  }

@@ -133,9 +133,10 @@ body{
     height:50dvh;
   }
   .text{
-    margin-left: 15dvw;
+    margin-left: 5dvw;
     font-style: italic;
     font-size: larger;
+    text-align: center;
   }
   a{
     text-decoration: none;
