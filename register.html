@@ -3,52 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eMATADAN | Register page</title>
     <link rel="stylesheet" href="stylereg.css">
-    <title>Register</title>
 </head>
 <body>
-    <div class="Register">
-        <form id="registrationForm">
-        <div id="namesection">  
-                <label for="fname" id="fnamelabel">First Name:</label>
-                <input type="text" id="name" name="fname" required>
-                <label for="lname" id="lnamelabel">Last Name:</label>
-                <input type="text" id="lname" name="lname" required>
-        </div>
-       
-        <div>
-            <label for="email" id="emaillabel">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="phoneNumber" id="phonelabel">Phone Number:</label>
-            <input type="tel" id="phoneNumber" name="phoneNumber" required>
-        </div>
-        <div>
-            <label for="password" id="passwordlabel">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <label for="confirmPassword" id="conpasswordlabel">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required>
-        </div>  
-        <div>
-            <label for="citizenshipNumber" id="citizenlabel">Citizenship Number:</label>
-            <input type="number" id="citizenshipNumber" name="citizenshipNumber" required>
-            <label for="gender">Gender</label>
-            <select id="gender" name="gender">
-                <option value="choose gender" disabled selected hidden>Select gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-       
-    
-        <div>
-            <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" name="dob" required>
-        </div>
-        <div>  
-            <button type="submit" id="button">Submit</button>
-        </div>
+
+    <div class="Registerbox">
+        <p id="heading">Register</p>
+        <form class="registrationForm">
+            <div class="details">
+                <div class="fname">
+                    <input placeholder="First Name" class="input-field" type="text">
+                </div>
+                <div class="lname">
+                    <input placeholder="Last Name" class="input-field" type="text">
+                </div>
+            </div>
+            <div class="details">
+                <div class="email">
+                    <input placeholder="Email" class="input-field" type="email">
+                </div>
+                <div class="citizenship_no">
+                    <input placeholder="Citizenship Number" class="input-field" type="text">
+                </div>
+            </div>
+            <div class="details">
+                <div class="phone_no">
+                    <input placeholder="Phone Number" class="input-field" type="tel" pattern="[0-9]{10}">
+                </div>
+                <div class="gender">
+                    Gender : 
+                    <select>
+                        <option value="Choose Gender" hidden selected disabled>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <div class="dob">
+                    D.O.B : 
+                    <input type="date">
+                </div>
+            </div>
+            <div class="details">
+                <div class="password">
+                    <input placeholder="Password" class="input-field" type="password">
+                </div>
+                <div class="confirm_pass">
+                    <input placeholder="Confirm Password" class="input-field" type="password">
+                </div>
+            </div>
+            <div class="btn">
+                <button class="button1">Register</button>
+            </div>
         </form>
     </div>
+    
 </body>
 </html>
