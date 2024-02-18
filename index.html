@@ -7,24 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login">
-        <div class="inputs">
-            <div class="email">
-                <input id="email" type="email" required placeholder="Email or Phone Number">
-            </div>
-            <div class="password">
-                <input id="password" type="password" required placeholder="Password">
-            </div>
+    <div class="container">
+        <div class="intro">
+            <img src="eMATADAN logo.png">
+            <div class="text"><h1>Vote for the future you want !</h1></div>
         </div>
-        <div class="login_button">
-            <button id="login_button">Log In</button>
-        </div>
-        <div class="forgot_pass">
-            <a>Forgot Password?</a>
-        </div>
-        <div class="register_button">
-            
-            <button id="register_button">Register Here</button>
+        <div class="login-box">
+            <form class="form">
+                <p id="heading">Login</p>
+                <div class="field">
+                
+                  <input autocomplete="off" placeholder="Email or Phone Number" class="input-field" type="email">
+                </div>
+                <div class="field">
+                
+                  <input placeholder="Password" class="input-field" type="password">
+                </div>
+                <div class="btn">
+                <button class="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                <button class="button2">Sign Up</button>
+                </div>
+                <button class="button3">Forgot Password</button>
+            </form>
         </div>
     </div>
 </body>
