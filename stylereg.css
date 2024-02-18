@@ -1,95 +1,34 @@
-
 body {
+    background-image:  linear-gradient(to bottom, red ,yellow);
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+.Register{
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-   
+    background-color: azure;
+    height: 70vh;
+    width: 60vw;
+    font-size:1.2cap
+
+}
+label{
+    font-size: 15px;
+   padding: 3%;
+   margin-top: 5vh;
+   margin-bottom: 5vh;
+
 }
 input{
     border-radius: 5px;
-    height: 30px;
-   
+    height: 5vh;
+    width: auto;
+    background-color: antiquewhite;
     font-size: 18px;
-}
-
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 8px;
-}
-
-input {
-    padding: 8px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.gender {
-    margin-bottom: 16px;
-}
-
-button {
-   
-    color: #184d34;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 15%;
-    display: block;
-    margin: auto;
-}
-
-button:hover {
-    background-color: #a0bcbf;
-}
-#name{
-    margin-right: 70px;
-    margin-left: 50px;
-    margin-bottom: 40px;
-}
-#email{
-    margin-right: 45px;
-    margin-left: 50px;
-    margin-bottom: 40px;
-    
-}
-#password{
-    margin-right:45px;
-    margin-left: 20px;
-    margin-bottom: 20px;
-
-}
-#phoneNumber{
-    margin-left: 30px;
-    margin-right: auto;
-
-}
-#citizenshipNumber{
-    margin-left: 25px;
-    margin-right: auto;
-}
-#confirmPassword{
-    margin-left: 25px;
-    margin-right: auto;
-}
-.Registerform { 
-    padding: 5%;
-    border-radius: 8px;
- 
+    margin-top: 2ch;
+    margin-bottom: 2ch;
 }
