@@ -16,26 +16,26 @@
             <p id="heading">Register</p>
             <form class="form">
                     <div class="field">
-                        <input placeholder="First Name" class="input-field" type="text">
+                        <input placeholder="First Name" class="input-field" type="text" required>
                     </div>
                     <div class="field">
-                        <input placeholder="Last Name" class="input-field" type="text">
-                    </div>
-                
-                    <div class="field">
-                        <input placeholder="Email" class="input-field" type="email">
-                    </div>
-                    <div class="field">
-                        <input placeholder="Citizenship Number" class="input-field" type="text">
+                        <input placeholder="Last Name" class="input-field" type="text" required>
                     </div>
                 
+                    <div class="field">
+                        <input placeholder="Email" class="input-field" type="email" required>
+                    </div>
+                    <div class="field">
+                        <input placeholder="Citizenship Number" class="input-field" type="text" required>
+                    </div>
+                
                 
                     <div class="field">
-                        <input placeholder="Phone Number" class="input-field" type="tel" pattern="[0-9]{10}">
+                        <input placeholder="Phone Number" class="input-field" type="tel" pattern="[0-9]{10}" required>
                     </div>
                     <div class="gender">
                         <span id="text">Gender :</span> 
-                        <select>
+                        <select required>
                             <option value="Choose Gender" hidden selected disabled>Select Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -44,15 +44,15 @@
                     </div>
                     <div class="dob">
                         <span id="text">Date of Birth:</span> 
-                        <input type="date">
+                        <input type="date" required>
                     </div>
                 
                 
                     <div class="field">
-                        <input placeholder="Password" class="input-field" type="password">
+                        <input placeholder="Password" class="input-field" type="password" required>
                     </div>
                     <div class="field">
-                        <input placeholder="Confirm Password" class="input-field" type="password">
+                        <input placeholder="Confirm Password" class="input-field" type="password" required>
                     </div>
                 
                 <div class="btn">
