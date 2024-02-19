@@ -13,7 +13,7 @@
     $phone = $_POST['phone'];
     $pass = $_POST['pass'];
 
-    $sql = "SELECT * FROM login WHERE phone='$phone' AND pass='$pass'";
+    $sql = "SELECT phone,pass FROM register_login WHERE phone='$phone' AND pass='$pass'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
