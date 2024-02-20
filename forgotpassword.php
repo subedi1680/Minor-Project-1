@@ -2,7 +2,7 @@
 $email = $_POST['email'];
 $otp = rand(10000, 99999);
 $to = $email;
-$from = "sandeshlamsal9@gmail.com";
+$from = "subedi1680@gmail.com";
 $fromName = "eMATADAN";
 $subject = "OTP verification";
 $message = "Your OTP is " . $otp;
