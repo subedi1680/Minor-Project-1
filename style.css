@@ -54,8 +54,10 @@ body{
     background: none;
     border: none;
     outline: none;
-    width: 100%;
+    height: 4dvh;
+    width: 15dvw;
     color: #000000;
+    font-size: large;
   }
   
   .form .btn {
@@ -76,11 +78,13 @@ body{
     transition: .4s ease-in-out;
     background-color: #17224a;
     color: white;
+    width:8dvw;
   }
   
   .button1:hover {
     background-color: black;
     color: white;
+    cursor: pointer;
   }
   
   .button2 {
@@ -93,12 +97,15 @@ body{
     transition: .4s ease-in-out;
     background-color: #17224a;
     color: white;
+    width:8dvw;
   }
   
   .button2:hover {
     background-color: black;
     color: white;
+    cursor: pointer;
   }
+  
   
   .button3 {
     margin-bottom: 3em;
@@ -114,6 +121,7 @@ body{
   .button3:hover {
     background-color: red;
     color: white;
+    cursor: pointer;
   }
   .container{
     display: flex;
@@ -125,7 +133,12 @@ body{
     height:50dvh;
   }
   .text{
-    margin-left: 15dvw;
+    margin-left: 5dvw;
     font-style: italic;
     font-size: larger;
+    text-align: center;
+  }
+  a{
+    text-decoration: none;
+    color: white;
   }
