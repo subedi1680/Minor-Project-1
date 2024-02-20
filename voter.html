@@ -3,39 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylevot.css"
+    <link rel="stylesheet" href="stylevot.css">
     <title>Voter - eMATADAN</title>
 </head>
 <body>
     <div class="Verify">
-      <label for="Verification-num" id="Verification-num" >Verification Number:</label>
-      <input type="Number" id="" name="Verification-num" required>
-
-      </label>
-        <button>
-            Verify
-        </button>
+        <label for="Verification-num">Verification Number:</label>
+        <input type="number" id="Verification-num" name="Verification-num" required>
+        <button>Verify</button>
     </div>
     <div class="Voter">
-       <table border="border" data-="" >
-        <colgroup 
-         <tr>
-            <th id="sn">sn</th>
-            <th id="cnd">Candidate</th>
-            <th id="pos">Position</th>
-            <th id="par">Party</th>
-            <th id="par-l" >Party logo</th>
-            <th id="vote"><button>vote</button></th>
-         </tr>
-
-       </table>
+        <table border="1">
+            <tr>
+                <th id="sn">S.N</th>
+                <th id="cnd">Candidate</th>
+                <th id="pos">Position</th>
+                <th id="par">Party</th>
+                <th id="par-l">Party Logo</th>
+                <th id="vote">Vote</th>
+            </tr>
+        
+        </table>
     </div>
-    <div class="person" data-="" tabindex="device-width" >
-       <div class="img"><img src="" alt=""></div>
-       <div class="votername">Voter name : </div>
-       <div class="Address">Address:<Address>  </Address></div>
-       <div class="DOB">DOB : </div>
-       <div class="phnum">Phone number:</div>  
+    <div class="person">
+        <div class="img"><img src="" alt="Voter Photo" id="voter-photo"></div>
+        <div class="votername" id="voter-name">Voter Name:</div>
+        <div class="Address" id="address">Address:</div>
+        <div class="DOB" id="dob">DOB:</div>
+        <div class="phnum" id="mobile-number">Mobile Number:</div>
+    </div>
+    <div class="status" id="status-msg">
+        <p>: Status</p>
     </div>
 </body>
 </html>

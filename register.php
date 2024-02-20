@@ -1,9 +1,10 @@
 <?php
+session_start();
 
-$servername = "localhost"; 
-$username = "root"; 
-$password = ""; 
-$dbname = "ematadan"; 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "ematadan";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -24,7 +25,11 @@ $stmt = $conn->prepare("INSERT INTO register_login (fname, lname, email, citizen
 $stmt->bind_param("ssssssss", $fname, $lname, $email, $citizenship_no, $phone, $gender, $dob, $pass);
 
 if ($stmt->execute() === TRUE) {
-    header("location:voter.html");
+
+    $_SESSION['phone'] = $phone;
+    $_SESSION['loggedin'] = true;
+
+    header("location:index.html");
 } else {
     echo "Error: " . $stmt->error;
 }

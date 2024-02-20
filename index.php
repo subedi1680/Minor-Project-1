@@ -1,27 +1,39 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ematadan";
+session_start();
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "ematadan";
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-    $phone = $_POST['phone'];
-    $pass = $_POST['pass'];
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-    $sql = "SELECT phone,pass FROM register_login WHERE phone='$phone' AND pass='$pass'";
-    $result = $conn->query($sql);
+$phone = $_POST['phone'];
+$pass = $_POST['pass'];
 
-    if ($result->num_rows > 0) {
-        header('Location: voter.html');
-        exit;
-    } else {
-        echo "Invalid username or password";
-    }
+$sql_admin = "SELECT * FROM admin WHERE phone='$phone' AND pass='$pass'";
+$result_admin = $conn->query($sql_admin);
 
-    $conn->close();
+$sql_user = "SELECT * FROM register_login WHERE phone='$phone' AND pass='$pass'";
+$result_user = $conn->query($sql_user);
+
+if ($result_admin->num_rows > 0) {
+    $_SESSION['phone'] = $phone;
+    $_SESSION['loggedin'] = true;
+    header('Location: admin_dashboard.html');
+    exit;
+} elseif ($result_user->num_rows > 0) {
+    $_SESSION['phone'] = $phone;
+    $_SESSION['loggedin'] = true;
+    header('Location: voter.html');
+    exit;
+} else {
+    echo "Invalid username or password";
+}
+
+$conn->close();
 ?>
