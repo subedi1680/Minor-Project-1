@@ -1,98 +1,71 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const sendOTPButton = document.getElementById('send-otp-button');
-    const verifyOTPButton = document.getElementById('verify-otp-button');
-    const changePasswordButton = document.getElementById('change-password-button');
-    let otpField = document.getElementById('otp-field');
-    const changePasswordFields = document.getElementById('change-password-fields');
+document.addEventListener('DOMContentLoaded', function() {
+    var sendOTPButton = document.getElementById('send-otp-button');
+    var verifyOTPButton = document.getElementById('verify-otp-button');
+    var changePasswordButton = document.getElementById('change-password-button');
+    var otpField = document.getElementById('otp-field');
+    var changePasswordField = document.getElementById('change-password-fields');
 
     sendOTPButton.addEventListener('click', function(event) {
         event.preventDefault();
-        const email = document.getElementById('email').value.trim();
-
-        if (email === '') {
-            alert('Please enter your email.');
-            return;
-        }
-
-        const formData = new FormData();
-        formData.append('sendotp', 'true');
-        formData.append('email', email);
-
-        fetch('forgotpassword.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            alert(data);
-            otpField.style.display = 'block';
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+        var email = document.getElementById('email').value;
+        
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    otpField.style.display = 'block';
+                } else {
+                    alert('Error sending OTP. Please try again.');
+                }
+            }
+        };
+        xhr.open('POST', 'forgotpassword.php');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send('sendotp=true&email=' + encodeURIComponent(email));
     });
 
     verifyOTPButton.addEventListener('click', function(event) {
         event.preventDefault();
-        const enteredOTP = document.getElementById('otp').value.trim();
-
-        if (enteredOTP === '') {
-            alert('Please enter OTP.');
-            return;
-        }
-
-        const formData = new FormData();
-        formData.append('verifyotp', 'true');
-        formData.append('otp', enteredOTP);
-        formData.append('email', document.getElementById('email').value.trim());
-
-        fetch('forgotpassword.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            alert(data);
-            if (data === 'Password updated successfully!') {
-                changePasswordFields.style.display = 'block';
-                otpField.style.display = 'none';
+        var enteredOTP = document.getElementById('otp').value;
+        var email = document.getElementById('email').value;
+        
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    changePasswordField.style.display = 'block';
+                } else {
+                    alert('Incorrect OTP! Please try again.');
+                }
             }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+        };
+        xhr.open('POST', 'forgotpassword.php');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send('verifyotp=true&email=' + encodeURIComponent(email) + '&otp=' + encodeURIComponent(enteredOTP));
     });
 
     changePasswordButton.addEventListener('click', function(event) {
         event.preventDefault();
-        const newPassword = document.getElementById('new-password').value.trim();
-        const confirmPassword = document.getElementById('confirm-password').value.trim();
+        var newPassword = document.getElementById('new-password').value;
+        var confirmPassword = document.getElementById('confirm-password').value;
+        var email = document.getElementById('email').value;
 
-        if (newPassword === '' || confirmPassword === '') {
-            alert('Please enter both new password and confirm password.');
-            return;
+        if (newPassword === confirmPassword) {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        alert('Password updated successfully!');
+                    } else {
+                        alert('Error updating password. Please try again.');
+                    }
+                }
+            };
+            xhr.open('POST', 'forgotpassword.php');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send('updatepassword=true&email=' + encodeURIComponent(email) + '&new-password=' + encodeURIComponent(newPassword));
+        } else {
+            alert("Passwords do not match. Please try again.");
         }
-
-        if (newPassword !== confirmPassword) {
-            alert('New password and confirm password do not match.');
-            return;
-        }
-
-        const formData = new FormData();
-        formData.append('email', document.getElementById('email').value.trim());
-        formData.append('new-password', newPassword);
-        formData.append('confirm-password', confirmPassword);
-
-        fetch('forgotpassword.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            alert(data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
     });
 });

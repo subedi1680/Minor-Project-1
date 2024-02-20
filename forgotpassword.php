@@ -1,5 +1,6 @@
 <?php
 include('smtp/PHPMailerAutoload.php');
+session_start();
 
 $servername = "localhost";
 $username = "root";
@@ -19,7 +20,7 @@ if(isset($_POST['sendotp'])) {
     echo smtp_mailer($email, 'One Time Password:', $otp);
 } elseif(isset($_POST['verifyotp'])) {
     $enteredOTP = $_POST['otp'];
-    if ($enteredOTP == $otp) {
+    if ($enteredOTP == $_SESSION['otp']) {
         $email = $_POST['email'];
         $newPassword = $_POST['new-password'];
         
@@ -34,6 +35,18 @@ if(isset($_POST['sendotp'])) {
     }
 }
 
+if(isset($_POST['updatepassword'])) {
+    $email = $_POST['email'];
+    $newPassword = $_POST['new-password'];
+    
+    $sql = "UPDATE register_login SET pass = '$newPassword' WHERE email = '$email'";
+    if(mysqli_query($conn, $sql)){
+        echo "Password updated successfully!";
+    } else {
+        echo "Error updating password: " . mysqli_error($conn);
+    }
+}
+
 function smtp_mailer($to, $subject, $msg){
     $mail = new PHPMailer(); 
     $mail->IsSMTP(); 
@@ -45,8 +58,8 @@ function smtp_mailer($to, $subject, $msg){
     $mail->CharSet = 'UTF-8';
  
     $mail->Username = "subedi1680@gmail.com";
-	$mail->Password = "etta lkyv jwfo jbdi";
-	$mail->SetFrom("subedi1680@gmail.com");
+    $mail->Password = "etta lkyv jwfo jbdi";
+    $mail->SetFrom("subedi1680@gmail.com");
     $mail->Subject = $subject;
     $mail->Body = $msg;
     $mail->AddAddress($to);
