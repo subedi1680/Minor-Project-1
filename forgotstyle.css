@@ -22,8 +22,8 @@ body {
     font-size: larger;
 }
 
-.login-box {
-    width: 35vw;
+.forgot-box {
+    width: 30vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,7 +54,7 @@ body {
     font-size: 2.5em;
 }
 
-.field {
+.field{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,7 +81,6 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin-top: 2.5em;
 }
 
 .button1 {
@@ -103,3 +102,4 @@ body {
     color: white;
     cursor: pointer;
 }
+
