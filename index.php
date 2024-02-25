@@ -32,7 +32,7 @@ if ($result_admin->num_rows > 0) {
     header('Location: voter.html');
     exit;
 } else {
-    echo "Invalid username or password";
+    echo '<script language="javascript">alert("Invalid Username or Password");window.location = "index.html";</script>';
 }
 
 $conn->close();

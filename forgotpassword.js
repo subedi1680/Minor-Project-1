@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
                     changePasswordField.style.display = 'block';
+                    otpField.style.display = 'none'; // Hide OTP field if verification successful
                 } else {
                     alert('Incorrect OTP! Please try again.');
                 }

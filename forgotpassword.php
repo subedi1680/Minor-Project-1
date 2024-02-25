@@ -31,6 +31,8 @@ if(isset($_POST['sendotp'])) {
             echo "Error updating password: " . mysqli_error($conn);
         }
     } else {
+        echo "Entered OTP: " . $enteredOTP . "<br>";
+        echo "Session OTP: " . $_SESSION['otp'] . "<br>";
         echo "Incorrect OTP! Please try again.";
     }
 }
@@ -41,7 +43,7 @@ if(isset($_POST['updatepassword'])) {
     
     $sql = "UPDATE register_login SET pass = '$newPassword' WHERE email = '$email'";
     if(mysqli_query($conn, $sql)){
-        echo "Password updated successfully!";
+        header("Location:index.html");
     } else {
         echo "Error updating password: " . mysqli_error($conn);
     }
