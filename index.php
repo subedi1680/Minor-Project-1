@@ -24,7 +24,7 @@ $result_user = $conn->query($sql_user);
 if ($result_admin->num_rows > 0) {
     $_SESSION['phone'] = $phone;
     $_SESSION['loggedin'] = true;
-    header('Location: admin_dashboard.html');
+    header('Location: admin_dashboard.php');
     exit;
 } elseif ($result_user->num_rows > 0) {
     $_SESSION['phone'] = $phone;
