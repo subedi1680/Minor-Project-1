@@ -3,37 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eMATADAN | Admin</title>
     <link rel="stylesheet" href="stylevot.css">
-    <title>Voter - eMATADAN</title>
+    <link rel="icon" href="eMATADAN.png" type="image/icon type">
 </head>
-<body>
-    <div class="Verify">
-        <label for="Verification-num">Verification Number:</label>
-        <input type="number" id="Verification-num" name="Verification-num" required>
-        <button>Verify</button>
+<body>  
+    <div class="header">
+        <div class="logo">
+            <img src="eMATADAN.png" height="100dvh" width="100dvw">
+            eMATADAN
+        </div>
+        <div class="logout">Logout button</div>
     </div>
-    <div class="Voter">
-        <table border="1">
-            <tr>
-                <th id="sn">S.N</th>
-                <th id="cnd">Candidate</th>
-                <th id="pos">Position</th>
-                <th id="par">Party</th>
-                <th id="par-l">Party Logo</th>
-                <th id="vote">Vote</th>
-            </tr>
-        
-        </table>
-    </div>
-    <div class="person">
-        <div class="img"><img src="" alt="Voter Photo" id="voter-photo"></div>
-        <div class="votername" id="voter-name">Voter Name:</div>
-        <div class="Address" id="address">Address:</div>
-        <div class="DOB" id="dob">DOB:</div>
-        <div class="phnum" id="mobile-number">Mobile Number:</div>
-    </div>
-    <div class="status" id="status-msg">
-        <p>: Status</p>
+    <div class="row_div">
+            <div class="candidates">
+                <table>
+                    <tr>
+                        <th>S.N.</th>
+                        <th>Candidate Name</th>
+                        <th>Candidate Position</th>
+                        <th>Action</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="profile">
+                <div class="image"><img src="eMATADAN.png" height="200dvh" width="200dvw"></div>
+                <div class="details">
+                    <div>VOTER NAME :</div>
+                    <div>ADDRESS :</div>
+                    <div>DOB :</div>
+                    <div>PHONE NUMBER :</div>
+                </div>
+            </div>
     </div>
 </body>
 </html>
