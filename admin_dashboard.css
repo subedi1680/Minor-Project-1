@@ -53,8 +53,10 @@ body{
 }
 .candidates {
     width:75dvw;
+    height: 42dvh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    overflow:auto;
 }
 .tools {
     width: 100dvw;
@@ -66,14 +68,17 @@ body{
 }
 table{
     border: 3px solid rgb(0, 0, 0);
-    width: 74dvw;
-    margin: 1em;
+    width: 70dvw;
+    margin-top: 2dvh;
+    margin-left: 2dvw;
 }
 th,td,tr{
     border: 3px solid black;
 }
 th{background-color: #3a6d85;}
-tr{background-color: #3c738d;}
+tr{
+    background-color: #3c738d;
+}
 .voting_status,.candidates,.tools,.add_candidates{
     border-radius: 25px;
     box-shadow:  8px 8px 16px #457a98,

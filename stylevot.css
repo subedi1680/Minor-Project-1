@@ -26,8 +26,10 @@ body{
 }
 .candidates {
     width:60dvw;
+    height: 70dvh;
     display: flex;
     justify-content: center;
+    overflow:auto;
 }
 .profile {
     width: 30dvw;
