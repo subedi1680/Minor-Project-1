@@ -34,6 +34,7 @@
                         <th>Candidate Position</th>
                         <th>Action</th>
                     </tr>
+                    <?php include "fetch_candidates.php"; ?>
                 </table>
             </div>
         </div>
@@ -50,8 +51,5 @@
             </div>
         </div>
     </div>
-    <?php
-        include "fetch_candidates.php";
-    ?>
 </body>
 </html>
