@@ -27,9 +27,11 @@ if ($result_admin->num_rows > 0) {
     header('Location: admin_dashboard.php');
     exit;
 } elseif ($result_user->num_rows > 0) {
+    $row = $result_user->fetch_assoc();
     $_SESSION['phone'] = $phone;
     $_SESSION['loggedin'] = true;
-    header('Location: voter.html');
+    $_SESSION['user_data'] = $row; // Store user data in session
+    header('Location: voter.php');
     exit;
 } else {
     echo '<script language="javascript">alert("Invalid Username or Password");window.location = "index.html";</script>';

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eMATADAN | Admin</title>
+    <title>eMATADAN | Voter</title>
     <link rel="stylesheet" href="stylevot.css">
     <link rel="icon" href="eMATADAN.png" type="image/icon type">
 </head>
@@ -27,12 +27,11 @@
                 </table>
             </div>
             <div class="profile">
-                <div class="image"><img src="eMATADAN.png" height="200dvh" width="200dvw"></div>
+                <div class="image"><img src="dp.png" height="200dvh" width="200dvw"></div>
                 <div class="details">
-                    <div>VOTER NAME :</div>
-                    <div>ADDRESS :</div>
-                    <div>DOB :</div>
-                    <div>PHONE NUMBER :</div>
+                    <?php
+                        include 'voter_details.php';
+                    ?>
                 </div>
             </div>
     </div>
