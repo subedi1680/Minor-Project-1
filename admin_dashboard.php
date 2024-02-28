@@ -50,5 +50,8 @@
             </div>
         </div>
     </div>
+    <?php
+        include "fetch_candidates.php";
+    ?>
 </body>
 </html>
