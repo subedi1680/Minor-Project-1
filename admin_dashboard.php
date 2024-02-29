@@ -23,7 +23,7 @@
                     <div class="vote_remaining">Vote remaining : </div>
                 </div>
                 <div class="add_candidates">
-                    <button class="add">Add Candidates</button>
+                    <button class="add" onclick="redirectToAddCandidate()">Add Candidates</button>
                 </div>
             </div>
             <div class="candidates">
@@ -51,5 +51,10 @@
             </div>
         </div>
     </div>
+    <script>
+        function redirectToAddCandidate() {
+            window.location.href = "addcandidate.html";
+        }
+    </script>
 </body>
 </html>
