@@ -20,9 +20,10 @@ $phone = $_POST['phone'];
 $gender = $_POST['gender'];
 $dob = $_POST['dob'];
 $pass = $_POST['pass'];
+$hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
 
 $stmt = $conn->prepare("INSERT INTO register_login (fname, lname, email, citizenship_no, phone, gender, dob, pass) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("ssssssss", $fname, $lname, $email, $citizenship_no, $phone, $gender, $dob, $pass);
+$stmt->bind_param("ssssssss", $fname, $lname, $email, $citizenship_no, $phone, $gender, $dob, $hashed_pass);
 
 if ($stmt->execute() === TRUE) {
 
