@@ -13,7 +13,7 @@
             <img src="eMATADAN.png" height="100dvh" width="100dvw">
             eMATADAN
         </div>
-        <div class="logout">Logout button</div>
+        <div class="logout"><a href="?logout=true"><img src="logout.png" alt="Logout" style="height: 10dvh;"></a></div>
     </div>
     <div class="row_div">
             <div class="candidates">
@@ -29,9 +29,30 @@
             <div class="profile">
                 <div class="image"><img src="dp.png" height="200dvh" width="200dvw"></div>
                 <div class="details">
-                    <?php
-                        include 'voter_details.php';
-                    ?>
+                <?php
+                    session_start();
+                    
+                    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+                        header("location: index.html");
+                        exit;
+                    }
+
+                    
+                    if(isset($_GET["logout"]) && $_GET["logout"] == 'true'){
+                        
+                        $_SESSION = array();
+
+                        
+                        session_destroy();
+
+                        
+                        header("location: index.html");
+                        exit;
+                    }
+
+                    include 'voter_details.php';
+                ?>
+
                 </div>
             </div>
     </div>
