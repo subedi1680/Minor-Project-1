@@ -24,6 +24,9 @@
                         <th>Candidate Position</th>
                         <th>Action</th>
                     </tr>
+                    <?php
+                        include 'fetch_candidates_voter.php';
+                    ?>
                 </table>
             </div>
             <div class="profile">
@@ -51,6 +54,7 @@
                     }
 
                     include 'voter_details.php';
+                    
                 ?>
 
                 </div>
