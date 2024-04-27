@@ -23,7 +23,7 @@
                     <div class="vote_remaining">Vote remaining : </div>
                 </div>
                 <div class="add_candidates">
-                    <button class="add" onclick="redirectToAddCandidate()">Add Candidates</button>
+                    <button class="add" id="add-candidates" onclick="redirectToAddCandidate()">Add Candidates</button>
                 </div>
             </div>
             <div class="candidates">
@@ -41,11 +41,9 @@
         <div class="tools">
             <div>Tools</div>
             <div class="start">
-                <button class="start">Start</button>
+                <button class="start" id="start-timer">Start</button>
             </div>
-            <div class="stop">
-                <button class="stop">Stop</button>
-            </div>
+            <div class="timerdisplay" id="timer-display"></div>
             <div class="reset">
                 <button class="reset">Reset</button>
             </div>
@@ -55,6 +53,41 @@
         function redirectToAddCandidate() {
             window.location.href = "addcandidate.html";
         }
+        const startButton = document.getElementById("start-timer");
+        const timerDisplay = document.getElementById("timer-display");
+        const addbutton = document.getElementById("add-candidates");
+
+        startButton.addEventListener("click", function(){
+            this.disabled = true;
+            addbutton.disabled = true;
+        })
+
+        let countdown;
+        let timeInSeconds = 6; 
+
+        function startTimer() {
+            clearInterval(countdown);
+            displayTime(timeInSeconds);
+
+            countdown = setInterval(() => {
+                timeInSeconds--;
+                displayTime(timeInSeconds);
+
+                if (timeInSeconds <= 0) {
+                    clearInterval(countdown);
+                    timerDisplay.textContent = "Time's up!";
+                }
+            }, 1000);
+        }
+
+        function displayTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            timerDisplay.textContent = `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
+        }
+
+        startButton.addEventListener("click", startTimer);
+
     </script>
 </body>
 </html>
