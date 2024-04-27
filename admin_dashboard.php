@@ -56,7 +56,7 @@
                     }
 
                     include 'fetch_candidates.php';
-                ?>
+                    ?>
                 </table>
             </div>
         </div>
@@ -75,20 +75,35 @@
         function redirectToAddCandidate() {
             window.location.href = "addcandidate.html";
         }
+
         const startButton = document.getElementById("start-timer");
         const timerDisplay = document.getElementById("timer-display");
         const addbutton = document.getElementById("add-candidates");
 
-        startButton.addEventListener("click", function(){
-            this.disabled = true;
+        let clickCounter = sessionStorage.getItem("startButtonClickCounter"); // Get click counter from sessionStorage
+        if (!clickCounter) {
+            clickCounter = 0;
+        }
+        if (clickCounter >= 1) {
             addbutton.disabled = true;
-        })
+        }
+
+        startButton.addEventListener("click", function(){
+            clickCounter++;
+            if (clickCounter === 1) {
+                addbutton.disabled = true;
+                sessionStorage.setItem("startButtonClickCounter", clickCounter); // Store click counter in sessionStorage
+                const duration = prompt("Please enter the time duration in seconds:");
+                startTimer(parseInt(duration, 10)); // Start timer with user-input duration
+            }
+        });
 
         let countdown;
-        let timeInSeconds = 6; 
+        let timeInSeconds = 6; // Default time
 
-        function startTimer() {
+        function startTimer(duration) {
             clearInterval(countdown);
+            timeInSeconds = duration;
             displayTime(timeInSeconds);
 
             countdown = setInterval(() => {
@@ -107,9 +122,6 @@
             const remainingSeconds = seconds % 60;
             timerDisplay.textContent = `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
         }
-
-        startButton.addEventListener("click", startTimer);
-
     </script>
 </body>
 </html>
