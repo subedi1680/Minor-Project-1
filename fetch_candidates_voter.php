@@ -20,7 +20,7 @@ if ($result) {
         echo "<td>" . $serialNumber . "</td>";
         echo "<td>" . $row['candidate_name'] . "</td>";
         echo "<td>" . $row['candidate_position'] . "</td>";
-        echo "<td style='text-align: center;'><button type='button' style='width:10dvw;background-color: green; color: white;' onclick='castVote(" . $serialNumber . ")'>Vote</button></td>";
+        echo "<td style='text-align: center;'><form action='vote.php' method='post' ><input type='hidden' name='serialNumber' value='$serialNumber' /><button name='vote' id='voteButton'style='width:10dvw;background-color: green; color: white;'>Vote</button></form></td>";
         echo "</tr>";
         $serialNumber++;
     }

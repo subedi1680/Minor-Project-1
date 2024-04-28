@@ -8,18 +8,19 @@ $dbname = "ematadan";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['vote'])) {
+    $serialNumber = $_POST['serialNumber'];
+    $query = "UPDATE candidates SET vote_count = vote_count + 1 WHERE id  = $serialNumber";
 
-    $candidate_id = $_POST['candidate_id'];
-
-    $update_query = "UPDATE candidates SET vote_count = vote_count + 1 WHERE candidate_id = $candidate_id";
-    if ($conn->query($update_query) === TRUE) {
-        echo "Vote submitted successfully!";
+    if (mysqli_query($conn, $query)) {
+        echo "Vote cast successfully";
     } else {
-        echo "Error updating record: " . $conn->error;
+        echo "Error casting the vote: " . mysqli_error($conn);
     }
 }
+?>

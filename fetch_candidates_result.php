@@ -31,7 +31,7 @@ if ($result) {
         echo "<td>" . $serialNumber . "</td>";
         echo "<td>" . $row['candidate_name'] . "</td>";
         echo "<td>" . $row['candidate_position'] . "</td>";
-        echo "<td>" . "</td>";
+        echo "<td>" . $row['vote_count'] . "</td>";
         echo "</tr>";
         $serialNumber++;
     }
