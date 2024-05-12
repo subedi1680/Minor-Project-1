@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_id'])) {
     }
 }
 
-$query = "SELECT id, candidate_name, candidate_position FROM candidates";
+$query = "SELECT id, candidate_name, candidate_position,vote_count FROM candidates";
 $result = mysqli_query($connection, $query);
 
 if ($result) {

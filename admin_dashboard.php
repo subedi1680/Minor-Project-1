@@ -58,7 +58,6 @@
         <div class="col_div">
             <div class="status_add">
                 <div class="voting_status">
-                    <div class="vote_done">Vote done : </div>
                     <div class="no_of_voters">No. of Voters : <?php echo $no_of_voters; ?></div>
                 </div>
                 <div class="add_candidates">
@@ -144,5 +143,8 @@
             timerDisplay.textContent = `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
         }
     </script>
+    <br><br>
+    <button onclick="window.location.href = 'result.php';" style="width: 10vw; background-color: green; color: white;">Result</button>
 </body>
+
 </html>

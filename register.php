@@ -25,6 +25,7 @@ $hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
 $stmt = $conn->prepare("INSERT INTO register_login (fname, lname, email, citizenship_no, phone, gender, dob, pass) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("ssssssss", $fname, $lname, $email, $citizenship_no, $phone, $gender, $dob, $hashed_pass);
 
+
 if ($stmt->execute() === TRUE) {
 
     $_SESSION['phone'] = $phone;
